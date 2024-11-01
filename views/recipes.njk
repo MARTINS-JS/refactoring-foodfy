@@ -1,0 +1,23 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <section class="recipes wrapper">
+    <div class="cards">
+      {% for recipe in recipes %}
+        <div class="card">
+          <div class="card_cover">
+            <img alt="recipe image" class="card_cover_image" src="{{ recipe.image }}">
+          </div>
+          <div class="card_content">
+            <p class="card_content_title">{{ recipe.title }}</p>
+            <p class="card_content_author">{{ recipe.author }}</p>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </section>
+{% endblock %}
+
+{% block script %}
+  <script src="/scripts.js"></script>
+{% endblock %}

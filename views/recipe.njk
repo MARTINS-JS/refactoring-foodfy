@@ -1,0 +1,50 @@
+{% extends 'layout.njk' %}
+
+{% block content %}
+  <section class="recipe_grid wrapper">
+    <div class="recipe">
+      <div class="recipe_cover">
+        <img alt="recipe image" class="recipe_cover_image" src="{{ recipe.image }}">
+      </div>
+      <div class="recipe_content">
+        <p class="recipe_content_title">{{ recipe.title }}</p>
+        <p class="recipe_content_author">{{ recipe.author }}</p>
+      </div>
+    </div>
+    <div class="recipe_ingredients">
+      <div class="subtitle">
+        <h2>Ingredientes</h2>
+        <span>MOSTRAR</span>
+      </div>
+      <ul class="list">
+        {% for item in recipe.ingredients %}
+          <li class="item">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="recipe_preparation">
+      <div class="subtitle">
+        <h2>Modo de preparo</h2>
+        <span>MOSTRAR</span>
+      </div>
+      <ul class="list">
+        {% for item in recipe.preparation %}
+          <li class="item">{{ item }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="recipe_information">
+      <div class="subtitle">
+        <h2>Informações adicionais</h2>
+        <span>MOSTRAR</span>
+      </div>
+      <div class="list">
+        <p class="item recipe_information_text">{{ recipe.information }}</p>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block script %}
+  <script src="/scripts.js"></script>
+{% endblock %}
